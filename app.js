@@ -58,13 +58,13 @@ const doggoRoute = require('./routes/doggo.js');
 app.use(doggoRoute);   // REST for the application model
 
 
-const PORT = 5002;
+const PORT = 5003;
 
 server.listen(PORT, (error) => {
     if (error) {
         console.log(error);
     }
-    console.log("Server is running remotely on port ", PORT, "please visit http://ec2-34-202-157-224.compute-1.amazonaws.com:5002/")
+    console.log("Server is running remotely on port ", PORT, "please visit http://ec2-34-202-157-224.compute-1.amazonaws.com:5003/")
 });
 
 const credentials = require("./config/mysqlCred");
