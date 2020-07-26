@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Apply for adoption</title>
+      <link rel="stylesheet" type="text/css" href="public/application/application.css">
+      <script src="/application/application.js"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Thasadith&display=swap" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   </head>
+   <body>
+      <form action="/apply" method="POST" name="applicationSubmit" onsubmit="return validateForm()">
+         <div class="application-container">
+            <label for="name">What is your name?</label>
+            <input type="text" placeholder="Your name" name="name" id="name">   
+            <label for="email">E-mail address</label>
+            <input type="text" placeholder="e-mail" name="email" id="email">
+            <label for="phone">Phone number</label>
+            <input type="text" placeholder="phone" name="phone" id="phone">
+            <label for="doggo_id">Unique identifier of a dog you are interested with:</label>
+            <input type="text" placeholder="Unique identifier of a dog you are interested with:" name="doggo_id" id="doggo_id">
+            <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+            <button class="btn btn-primary" id="cancel" onclick="window.location.href='/'">Cancel</button>
+         </div>
+      </form>
+      <script>
+
+      $("#submit").click(function() {
+         
+         var name = $("#name").val();
+         var email = $("#email").val();
+         var phone = $("#phone").val();
+         var doggo_id = $("#doggo_id").val();
+         
+         if ( name == '' || email == '' || phone == '' || doggo_id == '') {
+         
+            Swal.fire({
+               title: "Fields empty",
+               text: "Please fill the missing fields",
+               icon: "warning",
+               button: "OK"
+            });
+         } else {
+            
+            Swal.fire({
+               title: "Successfully aplied for the doggo! :)",
+               text: "success",
+               icon: "success",
+               button: "OK"
+            });
+         }
+      });
+         
+      </script>
+   </body>
+</html>

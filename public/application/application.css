@@ -1,0 +1,44 @@
+body {
+    background: url('../img/sad-doggo.jpg');
+    background-size: cover;
+    min-height: 100vh; 
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 15px 25px;
+    margin: 20px;
+    display: block;
+    border-radius: 25px;
+}
+
+.application-container {
+    width: 50%;
+    padding-right: 850px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.application-container label {
+    visibility: hidden;
+}
+
+.btn {
+    transition: .2s all ease-in-out;
+    text-transform: uppercase;
+    border-radius: 35px;
+    line-height: 50px;
+    border: none;
+    padding: 0 40px;
+    background-color: wheat;
+    cursor: pointer;
+    margin-left: 88px;
+    margin-top: 30px;
+}
+
+.btn:focus {
+    transform: scale(1.1);
+    outline: none;
+    box-shadow: none;
+}

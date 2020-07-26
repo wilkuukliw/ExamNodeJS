@@ -1,0 +1,115 @@
+body {
+	margin: 0;
+    background: #222;
+	color: #fafafa;
+	font-family: 'Thasadith', sans-serif;
+}
+
+.home {
+	background: url('./img/bg2.jpg');
+    background-size: cover;
+    min-height: 100vh; 
+}
+
+.wrapper { 
+    display: flex; 
+    align-items: center; 
+    height: 100vh; 
+	padding: 0 75px;  
+}
+
+/* logo */
+
+.logo {
+	border: 1px solid rgba(255, 255, 255, .17);
+	position: absolute;
+	left: 75px;
+	top: 25px;
+	padding: 10px;
+	width: 200px;
+}
+
+.logo-icon {
+	width: 20px;
+	float: left;
+	margin-right: 5px;
+	padding-right: 5px;
+}
+
+.logo-text {
+	display: block;
+	opacity: .43;
+	text-transform: uppercase;
+	font-size: 16px;
+	margin-top: 2px;
+}
+
+
+/* slogan */
+
+.slogan {
+	max-width: 100%;
+}
+
+.slogan-header {
+	margin: 0 0 20px;
+	font-weight: normal;
+	font-size: 52px;
+}
+
+.slogan-text {
+	font-size: 20px;
+	color: #d0c4bc;
+	font-weight: 100; 
+	line-height: 24px;
+	max-width: 500px;
+	margin-top: 50px;
+}
+
+.actions {
+	margin-top: 50px;
+}
+
+.btn {
+	transition: .2s all ease-in-out;
+	text-transform: uppercase;
+	border-radius: 35px;
+	line-height: 50px;
+	border: none;
+	padding: 0 30px;
+	background: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.btn:focus {
+	transform: scale(1.1);
+	outline: none;
+	box-shadow: none;
+}
+
+.btn-shadow {
+	border: 1px solid #d0c4bc;
+	color: #d0c4bc;
+}
+
+.btn-primary {
+	color: #fff;
+	background: #c19656;
+}
+
+
+/* Footer */
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+#footer-wrapper {
+    font-size: 0.8em;
+}

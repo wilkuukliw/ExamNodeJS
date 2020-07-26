@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Chat</title>
+      <link rel="stylesheet" href="./chat.css" type="text/css"/>
+      <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Thasadith&display=swap" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js" integrity="sha256-Dul4c09cdrWKXVtallPxF558lwxMwCC8dXJdZ0PVW54=" crossorigin="anonymous"></script>
+   </head>
+   <body>
+      <div id="messages"></div>
+      <div class="wrapper">
+         <input class="chat-input" type="text" id="talk" placeholder="Type your message.." required>
+         <button class="btn btn-submit" id="submit">Send</button>
+      </div>
+      <script>
+         const socket = io.connect("http://ec2-34-202-157-224.compute-1.amazonaws.com:5002");   //connect to the backend
+         
+         $('#submit').click(() => {
+             const talk = $('#talk').val();             //get the values of form elements such as input and textarea 
+             $('#talk').val("");
+             socket.emit("Listen to the client!", { talk: escape(talk) } );  
+         });
+         
+         socket.on("User said", data => {
+             $('#messages').append(`<div>${data.talk}</div>`);
+         });
+         
+      </script>
+   </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet"  type="text/css" href="public/global.css">
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Thasadith&display=swap" rel="stylesheet">
+      <title>Homepage</title>
+   </head>
+   <body>
+      <div class="home dog-app">
+      <header class="app-header">
+         <div class="logo"><img class="logo-icon" src="public/img/home-icon.png" /><span class="logo-text">shelter for doggos</span></div>
+      </header>
+      <div class="wrapper">
+         <section class="slogan">
+            <h1 class="slogan-header">
+               <p>There is a doggo - </p>
+               patiently waiting for you.
+            </h1>
+            <p class="slogan-text">Do you know how many dogs are homeless? All of them need care and attention and want to live in a happy and warm home. You could save their life. Wanna be a hero?</p>
+            <div class="actions">
+               <button class="btn btn-primary" onclick="window.location.href='/doggos'">See our dogs</button>
+               <button class="btn btn-shadow" onclick="window.location.href='/apply'">Apply for adoption</button>
+               <button class="btn btn-shadow" onclick="window.location.href='/chat'">Quick chat</button>
+               <button class="btn btn-shadow" onclick="window.location.href='/breeds'">Breeds overview</button>
+            </div>
+         </section>
+         <div class= "footer">
+            <div id="footer-wrapper">
+            </div>
+         </div>
+      </div>
+      <script>
+         const currentYear = new Date().getFullYear();
+         $("#footer-wrapper").text("Coopyright Anna Maria Wilczek © " + currentYear)
+      </script>
+   </body>
+</html>

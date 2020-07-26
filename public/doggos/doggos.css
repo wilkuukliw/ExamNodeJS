@@ -1,0 +1,22 @@
+body {
+    background: url('../img/bg3.jpg');
+    background-size: cover;
+    min-height: 100vh; 
+}
+
+
+  #doggos thead,
+  #doggos th {
+    text-align: center;
+    color: black !important;
+}
+
+.dt-center {
+  font-weight: bold;
+  font-size: larger;
+
+}
+
+
+
+
