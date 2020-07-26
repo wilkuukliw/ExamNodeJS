@@ -1,6 +1,6 @@
 module.exports = {
-    database: 'dog_adoption',
-    user: 'root',
+    database: 'examdb',
+    user: 'admin',
     password: 'password',
     host: "examdb.cab7koaw8w48.us-east-1.rds.amazonaws.com",
 
