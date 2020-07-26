@@ -75,7 +75,7 @@ var connection = mysql.createConnection({
     database: credentials.database,
     user:     credentials.user,
     password: credentials.password,
-    port: credentials.port,
+    port: '3306'
 });
 
 connection.connect(function(err) {
