@@ -18,5 +18,4 @@ class Doggo extends Model {
     }
 }
 
-
 module.exports = Doggo;
