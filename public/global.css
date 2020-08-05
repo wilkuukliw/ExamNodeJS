@@ -113,3 +113,15 @@ body {
 #footer-wrapper {
     font-size: 0.8em;
 }
+
+ul {
+    margin: 0 auto;
+    display: block;
+    line-height: 55px;
+    margin-bottom: 100px;
+}
+
+.about {
+	font-size: 1.3em;
+	padding: 0 90px; 
+}

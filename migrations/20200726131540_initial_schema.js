@@ -23,13 +23,21 @@ exports.up = function(knex) {
             table.foreign('doggo_id').references('doggos.id');
             table.dateTime('updated_at').defaultTo(knex.raw('NULL ON UPDATE CURRENT_TIMESTAMP'));
             table.dateTime('created_at').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP'));
+        })
+        .createTable('users', (table) => {
+            table.increments('id').notNullable();
+            table.string('username').unique().notNullable();
+            table.string('password').notNullable();
+            table.dateTime('updated_at').defaultTo(knex.raw('NULL ON UPDATE CURRENT_TIMESTAMP'));
+            table.dateTime('created_at').notNullable().defaultTo(knex.raw('CURRENT_TIMESTAMP'));
         });
 };
 
 exports.down = function(knex) {
     return knex.schema
         .dropTableIfExists('applications')
-        .dropTableIfExists('doggos');
+        .dropTableIfExists('doggos')
+        .dropTableIfExists('users');
 };
 
 //If exports.up created a table, then exports.down will drop that table. If exports.up added a column, then exports.down will remove that column. The reason to include exports.down is so that you can quickly undo a migration should you need to.

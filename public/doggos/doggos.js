@@ -13,6 +13,8 @@ $(document).ready(function() {
             $('#doggos').DataTable({
                 data: x.response,
                 rowId: 'id',
+                "ordering": false,
+                "searching": true,
 
                 "columnDefs": [{
                     "className": "dt-center",

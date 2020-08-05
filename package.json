@@ -15,10 +15,12 @@
   "author": "Anna Maria Wilczek",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "datatables.net": "^1.10.21",
     "escape-html": "^1.0.3",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "helmet": "^3.23.3",
     "knex": "^0.21.2",
     "mysql": "^2.18.1",

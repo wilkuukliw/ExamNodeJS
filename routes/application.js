@@ -4,8 +4,13 @@ const Application = require('../models/Application.js');
 const Doggo = require('../models/Doggo.js');
 
 router.get('/apply', (req, res) => {
-    return res.sendFile(path.join(__dirname, '../public/application/application.html'));
-});
+
+    if(req.session.user) {
+        return res.sendFile(path.join(__dirname, '../public/application/application.html'));
+    } else {
+        return res.redirect('/login');
+    }
+ });
 
 router.post('/apply', async (req, res) => {
 

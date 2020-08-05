@@ -1,0 +1,60 @@
+input[type=text], input[type=password] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: auto;
+    display: block;
+    text-align: center;
+    border-radius: 25px;
+    
+}
+
+.account-container {
+    margin-top: 260px;
+    border-radius: 6px;
+    text-align: center;
+    position: relative;
+  
+}
+
+.account-container label {
+    visibility: hidden;
+}
+
+button {
+    background-color: #D1D693;
+    padding: 10px 10px;
+    margin: 19px 0;
+    border: none;
+    cursor: pointer;
+    width: 8%;
+    position: center;
+    font-family: 'Thasadith', sans-serif;
+    font-size: 1em;
+	text-transform: uppercase;
+	border-radius: 25px;
+	line-height: 40px;
+	padding: 0 30px;
+    margin-right: 20px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+a {
+    font-family: 'Thasadith', sans-serif;
+    font-weight: 700; 
+    color: #000000 !important; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+}
+
+body {
+    background: url('../img/bg4.jpg');
+    min-height: 100vh;
+    background-repeat: no-repeat;
+}
