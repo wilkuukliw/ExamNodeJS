@@ -71,9 +71,15 @@ const authRoute = require('./routes/auth.js');
 app.use(authRoute);
 
 
-var port = process.env.NODE_ENV == 'development' ? 3000 : 80;
-app.listen(port);
-    console.log("Server is running remotely")
+
+const PORT = 5002;
+
+server.listen(PORT, (error) => {
+    if (error) {
+        console.log(error);
+    }
+    console.log("Server is running remotely on port ", PORT, "please visit http://ec2-35-153-78-103.compute-1.amazonaws.com:5002/")
+});
 
 
 const credentials = require("./config/mysqlCred");
