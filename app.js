@@ -2,13 +2,13 @@ const express = require("express");
 const app = express();
 const helmet = require('helmet');
 const escape = require('escape-html');
+const path = require('path');
 app.use(express.static('public'))
 app.use(express.static("."));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false })); 
 app.use(helmet()); 
 const session = require('express-session');  
-
 
 app.use(session({
     secret: require('./config/mysqlCred.js').sessionSecret,  
@@ -72,16 +72,13 @@ const authRoute = require('./routes/auth.js');
 app.use(authRoute);
 
 
+const PORT = 5003;
 
-const PORT = process.env.PORT ? process.env.PORT : 8686;
-
-server.listen(PORT, error => {
-	if (error) {
-		console.log(error.log);
-	}
-
-
-    console.log("Server is running remotely on port", PORT,"please visit http://ec2-34-202-157-224.compute-1.amazonaws.com/")
+server.listen(PORT, (error) => {
+    if (error) {
+        console.log(error);
+    }
+    console.log("Server is running remotely on port ", PORT, "please visit http://ec2-34-202-157-224.compute-1.amazonaws.com:5003/")
 });
 
 const credentials = require("./config/mysqlCred");
