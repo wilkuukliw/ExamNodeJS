@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const helmet = require('helmet');
 const escape = require('escape-html');
-const path = require('path');
 app.use(express.static('public'))
 app.use(express.static("."));
 app.use(express.json());
@@ -72,14 +71,10 @@ const authRoute = require('./routes/auth.js');
 app.use(authRoute);
 
 
-const PORT = 5003;
+var port = process.env.NODE_ENV == 'development' ? 3000 : 80;
+app.listen(port);
+    console.log("Server is running remotely")
 
-server.listen(PORT, (error) => {
-    if (error) {
-        console.log(error);
-    }
-    console.log("Server is running remotely on port ", PORT, "please visit http://ec2-34-202-157-224.compute-1.amazonaws.com:5003/")
-});
 
 const credentials = require("./config/mysqlCred");
 var mysql = require('mysql');
