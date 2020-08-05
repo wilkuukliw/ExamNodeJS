@@ -71,14 +71,10 @@ const authRoute = require('./routes/auth.js');
 app.use(authRoute);
 
 
+const PORT = process.env.PORT || 3000;
 
-const PORT = 5002;
-
-server.listen(PORT, (error) => {
-    if (error) {
-        console.log(error);
-    }
-    console.log("Server is running remotely on port ", PORT, "please visit http://ec2-35-153-78-103.compute-1.amazonaws.com:5002/")
+server.listen(PORT, () => {
+    console.log("Express is ready at port " + PORT);
 });
 
 
