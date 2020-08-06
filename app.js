@@ -70,6 +70,9 @@ app.use(usersRoute); // REST for the user model /transferring  representations o
 const authRoute = require('./routes/auth.js');   
 app.use(authRoute);
 
+const addRoute = require('./routes/add-dog.js');   
+app.use(addRoute);
+
 // use port 3000 unless there exists a preconfigured port
 
 const PORT = process.env.PORT || 3000;
