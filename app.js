@@ -70,11 +70,12 @@ app.use(usersRoute); // REST for the user model /transferring  representations o
 const authRoute = require('./routes/auth.js');   
 app.use(authRoute);
 
+// use port 3000 unless there exists a preconfigured port
 
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
-    console.log("Server is listening at port " + PORT);
+    console.log("Server is listening on port " + PORT);
 });
 
 
