@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Add a dog</title>
+      <link rel="stylesheet" type="text/css" href="public/auth/account.css">
+     
+      <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Thasadith&display=swap" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   </head>
+   <body>
+      <form action="/add-dog" method="POST" name="applicationSubmit" onsubmit="return validateForm()"> 
+         <div class="account-container">
+            <label for="doggo"><b>Name</b></label>
+            <input type="text" placeholder="Doggo name" name="doggo" required>   
+            <label for="age"><b>Age</b></label>
+            <input type="text" placeholder="Age" name="age" required>
+            <label for="breed"><b>Breed</b></label>
+            <input type="text" placeholder="Breed" name="breed" required>
+            <textarea name="description" placeholder="short description" rows="6"></textarea>
+            <label for="picture1"><b>Link to photo</b></label>
+            <input type="text" placeholder="link to photo" name="picture1" required>
+            <label for="picture2"><b>Link to photo</b></label>
+            <input type="text" placeholder="link to photo" name="picture2" required>
+            <label for="picture3"><b>Link to photo</b></label>
+            <input type="text" placeholder="link to photo" name="picture3" required>
+            <button class="btn btn-primary" type="submit" id="submit">Create</button>
+         </div>
+      </form>
+   </body>
+   <script>
+
+    function validateForm() {
+    const doggo = document.forms.applicationSubmit.doggo.value;
+    const age = document.forms.applicationSubmit.age.value;
+    const picture1 = document.forms.applicationSubmit.picture1.value;
+    const picture2 = document.forms.applicationSubmit.picture2.value;
+    const picture3 = document.forms.applicationSubmit.picture3.value;
+
+
+    const numericReg = /^\+?\d*$/;
+    const urlReg = /^(?:(?:https?|ftp):\/\/)?(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[/?#]\S*)?$/i;
+
+
+    if (doggo.length < 2) {
+        sweetAlert("Please provide a full name of the dog");
+        return false;
+    }
+
+    if (!numericReg.test(age)) {
+        sweetAlert("Please enter numeric characters only for the age");
+        return false;
+    }
+
+    if (!urlReg.test(picture1) || !urlReg.test(picture2) || !urlReg.test(picture3)) {
+        sweetAlert("Please enter link");
+        return false;
+    }
+
+    return true;
+    
+}
+   </script>
+</html>
