@@ -5,7 +5,7 @@ const { knexSnakeCaseMappers } = require('objection');
 
 module.exports = {
 
-  production: {
+  development: {
     client: 'mysql',
     connection: {
       host: credentials.host,
