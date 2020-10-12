@@ -26,7 +26,7 @@ router.post('/login', async (req, res) => {
 
             req.session.username = username;
             req.session.user = {id: userFound[0].id}
-            req.flash("success", "You are now registered!");
+            Swal.fire('You are now logged in')
             res.redirect("/apply");
         }
 
