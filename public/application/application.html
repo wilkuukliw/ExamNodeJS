@@ -53,6 +53,34 @@
          }
       });
          
+      $('#applicationSubmit').submit(function (e, params) {
+        var localParams = params || {};
+
+        if (!localParams.send) {
+            e.preventDefault();
+        }
+
+           //additional input validations can be done hear
+
+    swal({
+                title: "Confirm Entry",
+                text: "Are you sure all entries are correct",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#6A9944",
+                confirmButtonText: "Confirm",
+                cancelButtonText: "Cancel",
+                closeOnConfirm: true
+            }, function (isConfirm) {
+                if (isConfirm) {
+                    $(e.currentTarget).trigger(e.type, { 'send': true });
+                } else {
+
+              //additional run on cancel  functions can be done hear
+
+            }
+        });
+});
       </script>
    </body>
 </html>

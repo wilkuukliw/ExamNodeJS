@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
+const flash = require('req-flash');
 const helmet = require('helmet');
 const escape = require('escape-html');
 app.use(express.static('public'))
 app.use(express.static("."));
 app.use(express.json());
+app.use(flash());
 app.use(express.urlencoded({ extended: false })); 
 app.use(helmet()); 
 const session = require('express-session');  

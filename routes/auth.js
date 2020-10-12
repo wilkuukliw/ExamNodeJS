@@ -24,7 +24,8 @@ router.post('/login', async (req, res) => {
 
             req.session.username = username;
             req.session.user = {id: userFound[0].id}
-            return res.redirect("/apply");   
+            req.flash("success", "You are now registered!");
+            res.redirect("/apply");
         }
 
     } catch(error) {
