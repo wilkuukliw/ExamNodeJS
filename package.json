@@ -32,5 +32,14 @@
     "socket.io": "^2.3.0",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^9.17.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilkuukliw/ExamNodeJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wilkuukliw/ExamNodeJS/issues"
+  },
+  "homepage": "https://github.com/wilkuukliw/ExamNodeJS#readme"
 }
