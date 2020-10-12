@@ -37,7 +37,7 @@ $(document).ready(function() {
             var table = $('#doggos').DataTable();
             $(document).on("click", "#doggos tr", function(e) {
                 var id = table.row(this).id();
-                window.location = "http://ec2-34-202-157-224.compute-1.amazonaws.com:3000/doggos/" + id;
+                window.location = "http://ec2-52-23-167-153.compute-1.amazonaws.com:3000/doggos/" + id;
                 //alert( 'Clicked row id ' + id );
             });
         }
