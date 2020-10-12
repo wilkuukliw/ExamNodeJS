@@ -3,7 +3,7 @@ module.exports = {
     user: 'admin',
     password: 'password',
     sessionSecret: 'some session secret',
-    host: "examdb.cab7koaw8w48.us-east-1.rds.amazonaws.com",
+    host: "examdb.cbheq4kzjn45.us-east-1.rds.amazonaws.com",
 
     dialect: "mysql",
     pool: {
