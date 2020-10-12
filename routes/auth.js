@@ -4,9 +4,7 @@ const User = require('../models/User.js');
 const bcrypt = require('bcrypt'); 
 const saltRounds = 12; 
 
-app.get('/contact', (req, res) => {
-	res.send(req.flash('message'));
-});
+
 router.get('/login', (req, res) => {
     return res.sendFile(path.join(__dirname, '../public/auth/login.html'));
 });
